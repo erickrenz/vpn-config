@@ -1,0 +1,8 @@
+- name: Setup Fedora Developer Workstation
+  hosts: all
+  tasks:
+    - name: update dnf
+      dnf:
+        update_cache: true
+        update_only: true
+        state: present

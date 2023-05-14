@@ -18,3 +18,5 @@ sudo subscription-manager register
 ```
 
 ### AWS Requirements
+
+user name = `ec2-user`
