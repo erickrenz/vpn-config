@@ -1,4 +1,4 @@
 all:
   hosts:
-    aws-vpn-001:
+    vpn1:
       ansible_host: vpn1
