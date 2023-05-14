@@ -1,8 +1,16 @@
-- name: Setup Fedora Developer Workstation
+- name: Connect to AWS VPN
   hosts: all
   tasks:
-    - name: update dnf
+    - name: install epel
+      dnf:
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+        state: latest
+    - name: update dnf packages
       dnf:
         update_cache: true
         update_only: true
-        state: present
+        state: latest
+    - name: install wireguard
+      dnf:
+        name: wireguard-tools
+        state: latest

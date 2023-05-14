@@ -5,18 +5,30 @@ This goal of this project is to quickly get a vpn up and running by installing a
 
 ## Getting Started
 
-### Download and Install
+1. Create an AWS EC2 instance using a RHEL Gold Image. 
 
-```bash
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/erickrenz/vpn-config/main/setup.sh)"
-```
-
-### RHEL Requirements
+2. SSH into the EC2 instance and run the following commands:
 
 ```bash
 sudo subscription-manager register
+sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
 ```
 
-### AWS Requirements
+3. On your local machine (not EC2), create a ssh config entry for the remote server:
 
-user name = `ec2-user`
+```yaml
+Host aws-vpn-001
+  HostName 123.456.789.012
+  User username
+  IdentityFile /path/to/key.pem
+```
+
+4. On your local machine (not EC2), run the playbook
+
+```bash
+ansible-playbook playbook.yaml
+```
+
+## Sources:
+
+- [EPEL](https://docs.fedoraproject.org/en-US/epel/)
