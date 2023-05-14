@@ -13,5 +13,5 @@ fi
 echo "[2/4] Installing dependencies..."
 subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
 dnf install -yq https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-dnf install -yq git 
-dnf install -yq --enablerepo epel-playground ansible
+dnf upgrade -yq
+dnf install -yq git ansible
