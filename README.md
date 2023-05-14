@@ -6,6 +6,8 @@ This goal of this project is to quickly get a vpn up and running by installing a
 ## Getting Started
 
 1. Create an AWS EC2 instance using a RHEL Gold Image. 
+    - RHEL 9.2 (Tested)
+    - CentOS Stream 9 (Alternative)
 
 2. SSH into the EC2 instance and run the following commands:
 
@@ -31,4 +33,5 @@ ansible-playbook playbook.yaml
 
 ## Sources:
 
+- [WireGuard](https://www.wireguard.com)
 - [EPEL](https://docs.fedoraproject.org/en-US/epel/)
