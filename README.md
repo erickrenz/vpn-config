@@ -17,7 +17,7 @@ sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rp
 3. On your local machine (not EC2), create a ssh config entry for the remote server:
 
 ```yaml
-Host aws-vpn-001
+Host vpn1
   HostName 123.456.789.012
   User username
   IdentityFile /path/to/key.pem
